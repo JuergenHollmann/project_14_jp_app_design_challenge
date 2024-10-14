@@ -9,17 +9,26 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.black,
-
-        body: Column(
-          children: [
-            Image(image: AssetImage("assets/bg_startscreen.png")),
-          ],
+        body: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/bg_startscreen.png"),
+              fit: BoxFit.cover,
+            ),
+          ),
         ),
-        //child: Text('Hello World!'),
+                    
+
+
+
+
+
+
+
       ),
     );
   }
 }
+//          child: Image: AssetImage("assets/chick cupcakes_3D.png"),
