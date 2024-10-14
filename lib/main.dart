@@ -18,17 +18,29 @@ class MainApp extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
+          child: Stack(
+            children: [
+              Positioned(
+                right: 26,
+                top: 310,
+                child: Transform.scale(
+                  scale: 2.6,
+                  child: const Image(
+                    image: AssetImage("assets/chick cupcakes_3D.png"),
+                  ),
+                ),
+              ),
+              const Positioned(
+                top: 530,
+                child: Image(
+                  image: AssetImage("assets/T2.png"),
+                  height: 300,
+                ),
+              ),
+            ],
+          ),
         ),
-                    
-
-
-
-
-
-
-
       ),
     );
   }
 }
-//          child: Image: AssetImage("assets/chick cupcakes_3D.png"),
