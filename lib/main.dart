@@ -30,12 +30,19 @@ class MainApp extends StatelessWidget {
                   ),
                 ),
               ),
-              const Positioned(
-                top: 530,
-                child: Image(
-                  image: AssetImage("assets/T2.png"),
-                  height: 300,
+              Positioned(
+                top: 540,
+                right: 20,
+                child: Transform.scale(
+                  scale: 1.14,
+                  child: const Image(
+                    image: AssetImage("assets/T2.png"),
+                  ),
                 ),
+
+                // child: Image(
+                //   image: AssetImage("assets/T2.png"),
+                //   height: 300,
               ),
             ],
           ),
