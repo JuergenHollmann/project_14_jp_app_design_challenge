@@ -20,9 +20,9 @@ class SecondPage extends StatelessWidget {
           ),
 
 // Überschrift einfügen:
-          child: const Stack(
+          child: Stack(
             children: [
-              Positioned(
+              const Positioned(
                 top: 76,
                 left: 16,
                 right: 50,
@@ -50,7 +50,7 @@ class SecondPage extends StatelessWidget {
               // ),
 
 // schräge Card (Top Card) einfügen:
-              Positioned(
+              const Positioned(
                 top: 252,
                 left: 16,
                 child: Image(
@@ -61,25 +61,26 @@ class SecondPage extends StatelessWidget {
                 ),
               ),
 
-// Bewertungsstern in die "Top Card" einfügen:
-//                             Positioned(
-//                 top: 180,
-//                 left: 16,
-//                 right: 16,
-
-//                     //SizedBox(height: 20),
+// "Burger_3D" einfügen:
+              Positioned(
+                top: 315,
+                right: 32,
+                child: Transform.scale(
+                  scale: 1.1,
+                  child: const Image(
+                    image: AssetImage("assets/Burger_3D.png"),
+                  ),
+                ),
+              ),
 
 // Text  in die "Top Card" einfügen:
-
-              Padding(
+              const Padding(
                 padding: EdgeInsets.fromLTRB(32, 180, 16, 0),
                 child: Positioned(
                   top: 160,
                   left: 16,
                   right: 16,
                   child: Column(
-                    // mainAxisAlignment: MainAxisAlignment.end
-
                     children: [
                       SizedBox(height: 8),
                       SizedBox(height: 85),
@@ -88,7 +89,7 @@ class SecondPage extends StatelessWidget {
                         width: 400,
                         // mainAxisAlignment: MainAxisAlignment.end
                         // child: Image(image: AssetImage("assets/Star.png"),
-                        //child: Icon(Icons.star),
+                        // child: Icon(Icons.star),
 
                         child: Text(
                           "                                                                                                   4.8",
@@ -113,16 +114,13 @@ class SecondPage extends StatelessWidget {
                         width: 400,
                         child: Text(
                           "Delish vegan burger\nthat tastes like heaven",
-                          style: TextStyle(
-                              fontSize: 14,
-                              //fontWeight: FontWeight.bold,
-                              color: Colors.white),
+                          style: TextStyle(fontSize: 14, color: Colors.white),
                         ),
                       ),
                       SizedBox(height: 16),
                       SizedBox(
                         width: 400,
-                        height: 300,
+                        height: 60,
                         child: Text(
                           "A 13.00",
                           style: TextStyle(
@@ -131,29 +129,35 @@ class SecondPage extends StatelessWidget {
                               color: Colors.white),
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(0, 16, 270, 0),
-                        child: Row(
-                          children: [
-                            Image(
-                              image:
-                                  AssetImage("assets/button_add_to_order.png"),
-                              width: 120,
-                            ),
-                            Padding(
-                              padding: EdgeInsets.fromLTRB(200, 16, 0, 0),
-                              child: Row(
-                                children: [
-                                  Image(
-                                    image: AssetImage("assets/Burger_3D.png"),
-                                    width: 120,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
+                      Row(
+                        children: [
+                          Image(
+                            image: AssetImage("assets/button_add_to_order.png"),
+                            width: 120,
+                          ),
+                          // Padding(
+                          //   padding: EdgeInsets.fromLTRB(200, 16, 0, 0),
+                          //   child: Row(
+                          //     children: [
+                          //       Image(
+                          //         image: AssetImage("assets/Burger_3D.png"),
+                          //         width: 120,
+                          //       ),
+                          //     ],
+                          //   ),
+                          // ),
+                        ],
                       ),
+                      // Positioned(
+                      //   top: -110,
+                      //   right: 70,
+                      //   child: Transform.scale(
+                      //     scale: 1.3,
+                      //     child: const Image(
+                      //       image: AssetImage("assets/Burger_3D.png"),
+                      //     ),
+                      //   ),
+                      // ),
                     ],
                   ),
                 ),
