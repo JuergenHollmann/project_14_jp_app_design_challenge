@@ -11,9 +11,14 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       home: Scaffold(
-        body: Center(
-          //child: Text('Hello World!'),
+        backgroundColor: Colors.black,
+
+        body: Column(
+          children: [
+            Image(image: AssetImage("assets/bg_startscreen.png")),
+          ],
         ),
+        //child: Text('Hello World!'),
       ),
     );
   }
