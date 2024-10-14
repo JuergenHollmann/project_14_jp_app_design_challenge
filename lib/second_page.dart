@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:project_14_jp_app_design_challenge/third_page.dart';
 
 void main() {
   runApp(const SecondPage());
@@ -74,17 +77,17 @@ class SecondPage extends StatelessWidget {
               ),
 
 // Text  in die "Top Card" einfügen:
-              const Padding(
-                padding: EdgeInsets.fromLTRB(32, 180, 16, 0),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(32, 180, 16, 0),
                 child: Positioned(
                   top: 160,
                   left: 16,
                   right: 16,
                   child: Column(
                     children: [
-                      SizedBox(height: 8),
-                      SizedBox(height: 85),
-                      SizedBox(
+                      const SizedBox(height: 8),
+                      const SizedBox(height: 85),
+                      const SizedBox(
                         height: 14,
                         width: 400,
                         // mainAxisAlignment: MainAxisAlignment.end
@@ -99,7 +102,7 @@ class SecondPage extends StatelessWidget {
                               color: Colors.white70),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 400,
                         child: Text(
                           "Angi's Yummy Burger",
@@ -109,16 +112,16 @@ class SecondPage extends StatelessWidget {
                               color: Colors.white),
                         ),
                       ),
-                      SizedBox(height: 8),
-                      SizedBox(
+                      const SizedBox(height: 8),
+                      const SizedBox(
                         width: 400,
                         child: Text(
                           "Delish vegan burger\nthat tastes like heaven",
                           style: TextStyle(fontSize: 14, color: Colors.white),
                         ),
                       ),
-                      SizedBox(height: 16),
-                      SizedBox(
+                      const SizedBox(height: 16),
+                      const SizedBox(
                         width: 400,
                         height: 60,
                         child: Text(
@@ -131,33 +134,24 @@ class SecondPage extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          Image(
-                            image: AssetImage("assets/button_add_to_order.png"),
-                            width: 120,
+                          GestureDetector(
+                            onTap: () {
+                              log("Wechsle zur Seite 3 = ThirdPage");
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const ThirdPage(),
+                                ),
+                              );
+                            },
+                            child: const Image(
+                              image:
+                                  AssetImage("assets/button_add_to_order.png"),
+                              width: 120,
+                            ),
                           ),
-                          // Padding(
-                          //   padding: EdgeInsets.fromLTRB(200, 16, 0, 0),
-                          //   child: Row(
-                          //     children: [
-                          //       Image(
-                          //         image: AssetImage("assets/Burger_3D.png"),
-                          //         width: 120,
-                          //       ),
-                          //     ],
-                          //   ),
-                          // ),
                         ],
                       ),
-                      // Positioned(
-                      //   top: -110,
-                      //   right: 70,
-                      //   child: Transform.scale(
-                      //     scale: 1.3,
-                      //     child: const Image(
-                      //       image: AssetImage("assets/Burger_3D.png"),
-                      //     ),
-                      //   ),
-                      // ),
                     ],
                   ),
                 ),
@@ -171,6 +165,3 @@ class SecondPage extends StatelessWidget {
     );
   }
 }
-
-
-//                   child: Border(bottom: BorderSide(width:1)),
