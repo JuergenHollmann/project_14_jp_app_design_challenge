@@ -77,17 +77,17 @@ class SecondPage extends StatelessWidget {
               ),
 
 // Text  in die "Top Card" einfügen:
-              Padding(
-                padding: const EdgeInsets.fromLTRB(32, 180, 16, 0),
+              const Padding(
+                padding: EdgeInsets.fromLTRB(32, 180, 16, 0),
                 child: Positioned(
                   top: 160,
                   left: 16,
                   right: 16,
                   child: Column(
                     children: [
-                      const SizedBox(height: 8),
-                      const SizedBox(height: 85),
-                      const SizedBox(
+                      SizedBox(height: 8),
+                      SizedBox(height: 85),
+                      SizedBox(
                         height: 14,
                         width: 400,
                         // mainAxisAlignment: MainAxisAlignment.end
@@ -102,7 +102,7 @@ class SecondPage extends StatelessWidget {
                               color: Colors.white70),
                         ),
                       ),
-                      const SizedBox(
+                      SizedBox(
                         width: 400,
                         child: Text(
                           "Angi's Yummy Burger",
@@ -112,16 +112,16 @@ class SecondPage extends StatelessWidget {
                               color: Colors.white),
                         ),
                       ),
-                      const SizedBox(height: 8),
-                      const SizedBox(
+                      SizedBox(height: 8),
+                      SizedBox(
                         width: 400,
                         child: Text(
                           "Delish vegan burger\nthat tastes like heaven",
                           style: TextStyle(fontSize: 14, color: Colors.white),
                         ),
                       ),
-                      const SizedBox(height: 16),
-                      const SizedBox(
+                      SizedBox(height: 16),
+                      SizedBox(
                         width: 400,
                         height: 60,
                         child: Text(
@@ -132,26 +132,8 @@ class SecondPage extends StatelessWidget {
                               color: Colors.white),
                         ),
                       ),
-                      Row(
-                        children: [
-                          GestureDetector(
-                            onTap: () {
-                              log("Wechsle zur Seite 3 = ThirdPage");
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const ThirdPage(),
-                                ),
-                              );
-                            },
-                            child: const Image(
-                              image:
-                                  AssetImage("assets/button_add_to_order.png"),
-                              width: 120,
-                            ),
-                          ),
-                        ],
-                      ),
+                      ButtonAddToOrder(),
+                      // ShowModalBottomSheetOnThirdPage(),
                     ],
                   ),
                 ),
@@ -162,6 +144,35 @@ class SecondPage extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class ButtonAddToOrder extends StatelessWidget {
+  const ButtonAddToOrder({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        GestureDetector(
+          onTap: () {
+            log("Wechsle zur Seite 3 = ThirdPage");
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ThirdPage(),
+              ),
+            );
+          },
+          child: const Image(
+            image: AssetImage("assets/button_add_to_order.png"),
+            width: 120,
+          ),
+        ),
+      ],
     );
   }
 }

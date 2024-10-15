@@ -48,13 +48,18 @@ class MainApp extends StatelessWidget {
                 top: 650,
                 right: 20,
                 left: 20,
-                bottom: 80,
+                bottom: 50,
                 child: ClipRRect(
                   borderRadius: const BorderRadius.all(Radius.circular(32)),
+
                   // child: const Color.fromARGB(195, 150, 21, 21),
                   // borderOnForeground: true,
                   child: BackdropFilter(
-                    filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                    filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
+                    // blendMode: BlendMode.difference, // dunkel mit overlay
+                    // blendMode: BlendMode.hardLight, // sieht besser aus
+                    // blendMode: BlendMode.screen, // auch zu gebrauchen
+                    blendMode: BlendMode.src, // passt fast zur Vorlage
                     child: const Column(
                       children: [
                         SizedBox(height: 30),
@@ -76,8 +81,8 @@ class MainApp extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(height: 30),
-                        DesignButton1(),
+                        SizedBox(height: 24),
+                        ButtonOrderNow(),
                       ],
                     ),
                   ),
@@ -119,13 +124,13 @@ class MainApp extends StatelessWidget {
   }
 }
 
-class DesignButton1 extends StatelessWidget {
-  const DesignButton1({super.key});
+class ButtonOrderNow extends StatelessWidget {
+  const ButtonOrderNow({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
+    return GestureDetector(
+      onTap: () {
         log("Wechsle zur Seite 2 = SecondPage");
         Navigator.push(
           context,
@@ -134,13 +139,9 @@ class DesignButton1 extends StatelessWidget {
           ),
         );
       },
-
-      // style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
-
-      child: const Text(
-        "Order Now",
-        style: TextStyle(
-            fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
+      child: const Image(
+        image: AssetImage("assets/button_order_now.png"),
+        width: 235,
       ),
     );
   }

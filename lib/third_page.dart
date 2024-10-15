@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:project_14_jp_app_design_challenge/main.dart';
 
 void main() {
   runApp(const ThirdPage());
@@ -19,6 +22,9 @@ class ThirdPage extends StatelessWidget {
             ),
           ),
 
+          // //body: const BottomSheetExample(),
+          // BottomSheetExample(),
+
 // Überschrift einfügen:
           child: const Stack(
             children: [
@@ -35,8 +41,112 @@ class ThirdPage extends StatelessWidget {
                 ),
               ),
 
+// // // Muffin (grafiken/cat cupcakes_3D.png) einfügen:
+              //body: const BottomSheetExample(),
+              BottomSheetExample(),
 
-// // schräge Card (Top Card) einfügen:
+// Button "Add to Order for A 8.99" einfügen:
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class BottomSheetExample extends StatelessWidget {
+  const BottomSheetExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: ShowModalBottomSheetOnThirdPage(),
+    );
+  }
+}
+
+class ShowModalBottomSheetOnThirdPage extends StatelessWidget {
+  const ShowModalBottomSheetOnThirdPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      child: const Text('-----------------showModalBottomSheet---------------'),
+      onPressed: () {
+        showModalBottomSheet<void>(
+          scrollControlDisabledMaxHeightRatio: 0.885,
+          context: context,
+          builder: (BuildContext context) {
+            return Container(
+              height: 1000,
+              color: const Color.fromARGB(255, 87, 36, 36),
+              child: const Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
+
+// Muffin einfügen:
+
+                  // children: [
+                  //   Stack(
+                  //     child: Positioned(
+                  //       top: 252,
+                  //       left: 16,
+                  children: [
+                    Image(
+                      image: AssetImage("assets/cat cupcakes_3D.png"),
+                      height: 450,
+                      fit: BoxFit.cover,
+                    ),
+                    SizedBox(height: 300),
+                    // ],
+                    // //     ),
+                    // //   ),
+                    // // ],
+
+                    // children: [
+                    // const Text('--- Text wird hier nicht benötigt ---'),
+                    ButtonAddOrderForSum(),
+                  ],
+                ),
+              ),
+            );
+          },
+        );
+      },
+    );
+  }
+}
+
+class ButtonAddOrderForSum extends StatelessWidget {
+  const ButtonAddOrderForSum({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        log("Wechsle zur Seite 1 = MainApp");
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const MainApp(),
+          ),
+        );
+      },
+      child: const Image(
+        image: AssetImage("assets/button_add_order_for_sum.png"),
+        width: 380,
+      ),
+    );
+  }
+}
+
+
+
+
+
+
+// // Muffin einfügen:
 //               const Positioned(
 //                 top: 252,
 //                 left: 16,
@@ -140,11 +250,44 @@ class ThirdPage extends StatelessWidget {
 //                 ),
 //               ),
 
-// vertikal scrollbare Cards einfügen:
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
+// Button "Add to Order for A 8.99" einfügen:
+
+
+
+// -------------- Original-Vorlage ------------------
+// class BottomSheetExample extends StatelessWidget {
+//   const BottomSheetExample({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Center(
+//       child: ElevatedButton(
+//         child: const Text('showModalBottomSheet'),
+//         onPressed: () {
+//           showModalBottomSheet<void>(
+//             context: context,
+//             builder: (BuildContext context) {
+//               return Container(
+//                 height: 200,
+//                 color: Colors.amber,
+//                 child: Center(
+//                   child: Column(
+//                     mainAxisAlignment: MainAxisAlignment.center,
+//                     mainAxisSize: MainAxisSize.min,
+//                     children: <Widget>[
+//                       const Text('Modal BottomSheet'),
+//                       ElevatedButton(
+//                         child: const Text('Close BottomSheet'),
+//                         onPressed: () => Navigator.pop(context),
+//                       ),
+//                     ],
+//                   ),
+//                 ),
+//               );
+//             },
+//           );
+//         },
+//       ),
+//     );
+//   }
+// }
