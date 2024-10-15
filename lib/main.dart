@@ -49,6 +49,7 @@ class MainApp extends StatelessWidget {
                 right: 20,
                 left: 20,
                 bottom: 50,
+
                 child: ClipRRect(
                   borderRadius: const BorderRadius.all(Radius.circular(32)),
 
