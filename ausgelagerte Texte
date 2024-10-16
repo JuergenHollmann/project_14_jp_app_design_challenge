@@ -1,0 +1,222 @@
+                      // child: IconButton(
+                      //   iconSize: 44,
+                      //   icon: const Icon(
+                      //     Icons.add_circle_outline,
+                      //     color: Colors.white38,
+                      //   ),
+                      //   child: Text(
+                      //     "$countItems",
+                      //     style: const TextStyle(
+                      //         fontSize: 27,
+                      //         fontWeight: FontWeight.w500,
+                      //         color: Colors.white70),
+                      //   ),
+                      //   onPressed: () {
+                      //     countItems++;
+
+                      //     log("Addiere ein weiteres gleiches Produkt in den Warenkorb");
+
+                      //     // Navigator.push(
+                      //     //   context,
+                      //     //   MaterialPageRoute(
+                      //     //     builder: (context) => const SecondPage(),
+                      //     //   ),
+                      //     // );
+                      //   },
+                      // ),
+// ----------------------------------------------------------------------
+// // Muffin einfügen:
+//               const Positioned(
+//                 top: 252,
+//                 left: 16,
+//                 child: Image(
+//                   image: AssetImage("assets/Top Card.png"),
+//                   width: 400,
+//                   //color: Color.fromARGB(162, 36, 36, 36), // transparenz?
+//                   fit: BoxFit.cover,
+//                 ),
+//               ),
+
+// // "Burger_3D" einfügen:
+//               Positioned(
+//                 top: 315,
+//                 right: 32,
+//                 child: Transform.scale(
+//                   scale: 1.1,
+//                   child: const Image(
+//                     image: AssetImage("assets/Burger_3D.png"),
+//                   ),
+//                 ),
+//               ),
+
+// // Text  in die "Top Card" einfügen:
+//               const Padding(
+//                 padding: EdgeInsets.fromLTRB(32, 180, 16, 0),
+//                 child: Positioned(
+//                   top: 160,
+//                   left: 16,
+//                   right: 16,
+//                   child: Column(
+//                     children: [
+//                       SizedBox(height: 8),
+//                       SizedBox(height: 85),
+//                       SizedBox(
+//                         height: 14,
+//                         width: 400,
+//                         // mainAxisAlignment: MainAxisAlignment.end
+//                         // child: Image(image: AssetImage("assets/Star.png"),
+//                         // child: Icon(Icons.star),
+
+//                         child: Text(
+//                           "                                                                                                   4.8",
+//                           style: TextStyle(
+//                               fontSize: 12,
+//                               fontWeight: FontWeight.bold,
+//                               color: Colors.white70),
+//                         ),
+//                       ),
+//                       SizedBox(
+//                         width: 400,
+//                         child: Text(
+//                           "Angi's Yummy Burger",
+//                           style: TextStyle(
+//                               fontSize: 18,
+//                               fontWeight: FontWeight.bold,
+//                               color: Colors.white),
+//                         ),
+//                       ),
+//                       SizedBox(height: 8),
+//                       SizedBox(
+//                         width: 400,
+//                         child: Text(
+//                           "Delish vegan burger\nthat tastes like heaven",
+//                           style: TextStyle(fontSize: 14, color: Colors.white),
+//                         ),
+//                       ),
+//                       SizedBox(height: 16),
+//                       SizedBox(
+//                         width: 400,
+//                         height: 60,
+//                         child: Text(
+//                           "₳ 13.00",
+//                           style: TextStyle(
+//                               fontSize: 18,
+//                               fontWeight: FontWeight.bold,
+//                               color: Colors.white),
+//                         ),
+//                       ),
+//                       Row(
+//                         children: [
+//                           Image(
+//                             image: AssetImage("assets/button_add_to_order.png"),
+//                             width: 120,
+//                           ),
+//                           // Padding(
+//                           //   padding: EdgeInsets.fromLTRB(200, 16, 0, 0),
+//                           //   child: Row(
+//                           //     children: [
+//                           //       Image(
+//                           //         image: AssetImage("assets/Burger_3D.png"),
+//                           //         width: 120,
+//                           //       ),
+//                           //     ],
+//                           //   ),
+//                           // ),
+//                         ],
+//                       ),
+//                     ],
+//                   ),
+//                 ),
+//               ),
+
+// Button "Add to Order for ₳ 8.99" einfügen:
+
+// -------------- Original-Vorlage ------------------
+// class BottomSheetExample extends StatelessWidget {
+//   const BottomSheetExample({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Center(
+//       child: ElevatedButton(
+//         child: const Text('showModalBottomSheet'),
+//         onPressed: () {
+//           showModalBottomSheet<void>(
+//             context: context,
+//             builder: (BuildContext context) {
+//               return Container(
+//                 height: 200,
+//                 color: Colors.amber,
+//                 child: Center(
+//                   child: Column(
+//                     mainAxisAlignment: MainAxisAlignment.center,
+//                     mainAxisSize: MainAxisSize.min,
+//                     children: <Widget>[
+//                       const Text('Modal BottomSheet'),
+//                       ElevatedButton(
+//                         child: const Text('Close BottomSheet'),
+//                         onPressed: () => Navigator.pop(context),
+//                       ),
+//                     ],
+//                   ),
+//                 ),
+//               );
+//             },
+//           );
+//         },
+//       ),
+//     );
+//   }
+// }
+
+// child: const Center(
+//   child: Positioned(
+//     top: -100,
+//     child: Column(
+//       // mainAxisAlignment: MainAxisAlignment.center,
+//       // mainAxisSize: MainAxisSize.min,
+
+//       // Muffin einfügen:
+
+//       // children: [
+//       //   Stack(
+//       //     child: Positioned(
+//       //       top: 252,
+//       //       left: 16,
+
+//       children: [
+//         Image(
+//           image: AssetImage("assets/cat cupcakes_3D.png"),
+//           height: 450,
+//           fit: BoxFit.cover,
+//         ),
+//         SizedBox(height: 300),
+//         ButtonAddOrderForSum(),
+//       ],
+//     ),
+//   ),
+// ),
+
+// child: Container(
+//   height: 200,
+//   width: 350,
+//   decoration: BoxDecoration(
+//     color: Colors.white.withOpacity(0.04),
+//     borderRadius: BorderRadius.circular(16),
+//     border: Border.all(color: Colors.white, width: 0.2),
+//     //boxShadow: BoxShadow(spreadRadius: 1,),
+//   ),
+//   child: const Padding(
+//     padding: EdgeInsets.only(top: 30),
+//     child: Text(
+//       "Feeling Snackish Today?",
+//       textAlign: TextAlign.center,
+//       style: TextStyle(
+//         fontWeight: FontWeight.bold,
+//         color: Colors.white,
+//         fontSize: 24,
+//       ),
+
+// clipBehavior: Clip.none,
+//                 context: context,
+//                 builder: (context) => Container());
