@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:project_14_jp_app_design_challenge/third_page.dart';
 
@@ -9,7 +8,6 @@ void main() {
 
 class SecondPage extends StatelessWidget {
   const SecondPage({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,8 +19,9 @@ class SecondPage extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-
+// ----------------------------------------------------------------------------------------
 // Überschrift einfügen:
+// ----------------------------------------------------------------------------------------
           child: Stack(
             children: [
               const Positioned(
@@ -37,8 +36,13 @@ class SecondPage extends StatelessWidget {
                       color: Colors.white),
                 ),
               ),
-
+// ----------------------------------------------------------------------------------------
 // horizontal scrollbares Menü einfügen:
+              // const Padding(
+              //   padding: EdgeInsets.only(left: 16),
+              //   child: SecondPageScrollMenue(),
+              // ),
+
               // Positioned(
               //   top: 140,
               //   left: 16,
@@ -51,8 +55,9 @@ class SecondPage extends StatelessWidget {
               //         color: Colors.white),
               //   ),
               // ),
-
+// ----------------------------------------------------------------------------------------
 // schräge Card (Top Card) einfügen:
+// ----------------------------------------------------------------------------------------
               const Positioned(
                 top: 252,
                 left: 16,
@@ -63,8 +68,9 @@ class SecondPage extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-
+// ----------------------------------------------------------------------------------------
 // "Burger_3D" einfügen:
+// ----------------------------------------------------------------------------------------
               Positioned(
                 top: 315,
                 right: 32,
@@ -75,8 +81,9 @@ class SecondPage extends StatelessWidget {
                   ),
                 ),
               ),
-
+// ----------------------------------------------------------------------------------------
 // Text  in die "Top Card" einfügen:
+// ----------------------------------------------------------------------------------------
               const Padding(
                 padding: EdgeInsets.fromLTRB(32, 180, 16, 0),
                 child: Positioned(
@@ -125,7 +132,7 @@ class SecondPage extends StatelessWidget {
                         width: 400,
                         height: 60,
                         child: Text(
-                          "A 13.00",
+                          "₳ 13.00",
                           style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
@@ -138,7 +145,7 @@ class SecondPage extends StatelessWidget {
                   ),
                 ),
               ),
-
+// ----------------------------------------------------------------------------------------
 // vertikal scrollbare Cards einfügen:
             ],
           ),
@@ -148,10 +155,9 @@ class SecondPage extends StatelessWidget {
   }
 }
 
+// ----------------------------------------------------------------------------------------
 class ButtonAddToOrder extends StatelessWidget {
-  const ButtonAddToOrder({
-    super.key,
-  });
+  const ButtonAddToOrder({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -176,3 +182,4 @@ class ButtonAddToOrder extends StatelessWidget {
     );
   }
 }
+// ----------------------------------------------------------------------------------------

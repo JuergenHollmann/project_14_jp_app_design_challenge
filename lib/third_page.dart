@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:project_14_jp_app_design_challenge/main.dart';
 
@@ -50,7 +51,7 @@ class ThirdPage extends StatelessWidget {
               // ShowModalBottomSheetOnThirdPage automatisch einblenden:
               // ---> Code <---
               //CupcakeExtra(),
-              // Button "Add to Order for A 8.99" einfügen:
+              // Button "Add to Order for ₳ 8.99" einfügen:
             ],
           ),
         ),
@@ -124,8 +125,8 @@ class ShowModalBottomSheetOnThirdPage extends StatelessWidget {
             context: context,
             builder: (BuildContext context) {
               return SizedBox(
-                height: MediaQuery.of(context).size.height,
-                width: MediaQuery.of(context).size.width,
+                // height: MediaQuery.of(context).size.height,
+                // width: MediaQuery.of(context).size.width,
                 child: Stack(
                   children: [
                     SizedBox(
@@ -171,19 +172,117 @@ class ShowModalBottomSheetOnThirdPage extends StatelessWidget {
                         ),
                       ),
                     ),
+// ----------------------------------------------------------------------
+// hier wird der Cupcake über das ModalBottomSheet oben hinaus platziert:
+// ----------------------------------------------------------------------
                     Positioned(
-                      top: 160, // - 160
+                      top: 160,
                       right: 40,
                       child: Transform.translate(
-                        offset: const Offset(-40, -210),
+                        offset: const Offset(-40,
+                            -210), // "-" bei Offset geht über den Rand hinaus
                         child: Container(
                           padding: const EdgeInsets.all(8.0),
                           child: Transform.scale(
+                            // ".scale" zoomt das Bild
                             scale: 1.8,
                             child: const Image(
                               image: AssetImage(
                                 "assets/cat cupcakes_3D.png",
                               ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+// ----------------------------------------------------------------------
+                    Positioned(
+                      top: 212,
+                      right: 16,
+                      left: 16,
+                      bottom: 250,
+                      child: ClipRRect(
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(32)),
+                        child: BackdropFilter(
+                          filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
+                          // blendMode: BlendMode.difference, // dunkel mit overlay
+                          // blendMode: BlendMode.hardLight, // sieht besser aus
+                          // blendMode: BlendMode.screen, // auch zu gebrauchen
+                          // blendMode: BlendMode.src, // passt fast zur Vorlage
+                          child: Container(
+                            decoration: BoxDecoration(
+                              //color: Colors.white.withOpacity(0.03),
+                              borderRadius: BorderRadius.circular(32),
+                              border:
+                                  Border.all(color: Colors.white, width: 0.2),
+                            ),
+                            child: const Column(
+                              children: [
+                                //SizedBox(height: 8),
+
+                                Padding(
+                                  padding: EdgeInsets.fromLTRB(16, 24, 16, 0),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    children: [
+                                      Icon(
+                                        Icons.heart_broken_rounded,
+                                        color: Colors.white60,
+                                      ),
+                                      Text(
+                                        " 200",
+                                        style: TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w600,
+                                            color: Colors.white60),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+
+                                Text(
+                                  "Mogli's Cup",
+                                  style: TextStyle(
+                                      fontSize: 32,
+                                      fontWeight: FontWeight.w900,
+                                      color: Colors.white),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.fromLTRB(16, 8, 16, 0),
+                                  child: Text(
+                                    "Lorem ipsum dolor sit amet consectetur. Non feugiat imperdiet a vel sit at amet. Mi accumsan feugiat magna aliquam feugiat ac et. Pulvinar hendrerit id arcu at sed etiam semper mi hendrerit. Id aliquet quis quam.",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontSize: 17,
+                                      color: Colors.white60,
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 32),
+                                Text(
+                                  "₳ 8.99",
+                                  style: TextStyle(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.white),
+                                ),
+                                SizedBox(height: 32),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 16),
+                                  child: Divider(
+                                    height: 1,
+                                    thickness: 0.8,
+                                    //indent: 16,
+                                    //endIndent: 40,
+                                    color: Colors.white60,
+                                  ),
+                                )
+
+                                // ButtonOrderNow(),
+                                // ButtonAddOrderForSum(),
+                              ],
                             ),
                           ),
                         ),
@@ -329,7 +428,7 @@ class ButtonAddOrderForSum extends StatelessWidget {
 //                         width: 400,
 //                         height: 60,
 //                         child: Text(
-//                           "A 13.00",
+//                           "₳ 13.00",
 //                           style: TextStyle(
 //                               fontSize: 18,
 //                               fontWeight: FontWeight.bold,
@@ -360,7 +459,7 @@ class ButtonAddOrderForSum extends StatelessWidget {
 //                 ),
 //               ),
 
-// Button "Add to Order for A 8.99" einfügen:
+// Button "Add to Order for ₳ 8.99" einfügen:
 
 
 
@@ -430,3 +529,24 @@ class ButtonAddOrderForSum extends StatelessWidget {
                     //     ),
                     //   ),
                     // ),
+
+
+                    // child: Container(
+                    //   height: 200,
+                    //   width: 350,
+                    //   decoration: BoxDecoration(
+                    //     color: Colors.white.withOpacity(0.04),
+                    //     borderRadius: BorderRadius.circular(16),
+                    //     border: Border.all(color: Colors.white, width: 0.2),
+                    //     //boxShadow: BoxShadow(spreadRadius: 1,),
+                    //   ),
+                    //   child: const Padding(
+                    //     padding: EdgeInsets.only(top: 30),
+                    //     child: Text(
+                    //       "Feeling Snackish Today?",
+                    //       textAlign: TextAlign.center,
+                    //       style: TextStyle(
+                    //         fontWeight: FontWeight.bold,
+                    //         color: Colors.white,
+                    //         fontSize: 24,
+                    //       ),
