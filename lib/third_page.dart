@@ -120,7 +120,7 @@ class ShowModalBottomSheetOnThirdPage extends StatelessWidget {
         //style: ButtonStyle(backgroundColor: Color.fromARGB(255, 87, 36, 36),),
         child: const Text(''),
         onPressed: () {
-          showModalBottomSheet<void>(
+          showModalBottomSheet(
             scrollControlDisabledMaxHeightRatio: 0.885,
             context: context,
             builder: (BuildContext context) {
@@ -145,12 +145,14 @@ class ShowModalBottomSheetOnThirdPage extends StatelessWidget {
                           ],
                         ),
                       ),
+// ----------------------------------------------------------------------
+// den "button_add_order_for_sum" einfügen:
+// ----------------------------------------------------------------------
                       child: Center(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          mainAxisSize: MainAxisSize.min,
-                          children: <Widget>[
-                            const SizedBox(height: 500),
+                          children: [
+                            const SizedBox(height: 700),
                             GestureDetector(
                               onTap: () {
                                 log("Wechsle zur Seite 1 = MainApp");
@@ -196,11 +198,13 @@ class ShowModalBottomSheetOnThirdPage extends StatelessWidget {
                       ),
                     ),
 // ----------------------------------------------------------------------
+// ClipRRect "Mogli's Cup" einfügen:
+// ----------------------------------------------------------------------
                     Positioned(
                       top: 212,
                       right: 16,
                       left: 16,
-                      bottom: 250,
+                      bottom: 160,
                       child: ClipRRect(
                         borderRadius:
                             const BorderRadius.all(Radius.circular(32)),
@@ -222,7 +226,7 @@ class ShowModalBottomSheetOnThirdPage extends StatelessWidget {
                                 //SizedBox(height: 8),
 
                                 Padding(
-                                  padding: EdgeInsets.fromLTRB(16, 24, 16, 0),
+                                  padding: EdgeInsets.fromLTRB(16, 24, 32, 0),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     crossAxisAlignment: CrossAxisAlignment.end,
@@ -250,27 +254,40 @@ class ShowModalBottomSheetOnThirdPage extends StatelessWidget {
                                       color: Colors.white),
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.fromLTRB(16, 8, 16, 0),
+                                  padding: EdgeInsets.fromLTRB(16, 8, 24, 16),
                                   child: Text(
                                     "Lorem ipsum dolor sit amet consectetur. Non feugiat imperdiet a vel sit at amet. Mi accumsan feugiat magna aliquam feugiat ac et. Pulvinar hendrerit id arcu at sed etiam semper mi hendrerit. Id aliquet quis quam.",
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                      fontSize: 17,
+                                      fontSize: 16,
                                       color: Colors.white60,
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: 32),
-                                Text(
-                                  "₳ 8.99",
-                                  style: TextStyle(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.w600,
-                                      color: Colors.white),
+                                SizedBox(height: 8),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "₳",
+                                      style: TextStyle(
+                                          fontSize: 30,
+                                          fontWeight: FontWeight.w600,
+                                          color: Colors.white),
+                                    ),
+                                    Text(
+                                      " 8.99",
+                                      style: TextStyle(
+                                          fontSize: 24,
+                                          fontWeight: FontWeight.w700,
+                                          color: Colors.white),
+                                    ),
+                                  ],
                                 ),
-                                SizedBox(height: 32),
+                                SizedBox(height: 24),
                                 Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 16),
+                                  padding: EdgeInsets.symmetric(horizontal: 24),
                                   child: Divider(
                                     height: 1,
                                     thickness: 0.8,
@@ -278,7 +295,72 @@ class ShowModalBottomSheetOnThirdPage extends StatelessWidget {
                                     //endIndent: 40,
                                     color: Colors.white60,
                                   ),
-                                )
+                                ),
+                                // SizedBox(height: 16),
+
+                                Padding(
+                                  padding: EdgeInsets.fromLTRB(24, 32, 24, 0),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      // Icon(
+                                      //   Icons.heart_broken_rounded,
+                                      //   color: Colors.white60,
+                                      // ),
+
+                                      Text(
+                                        "Ingredients",
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w600,
+                                            color: Colors.white60),
+                                      ),
+
+                                      // Image(
+                                      //   image: AssetImage(
+                                      //       "assets/ingredients.png"),
+                                      //   width: 120,
+                                      // ),
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(height: 0),
+
+                                Padding(
+                                  padding: EdgeInsets.fromLTRB(24, 8, 24, 0),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      // Icon(
+                                      //   Icons.heart_broken_rounded,
+                                      //   color: Colors.white60,
+                                      // ),
+
+                                      // Text(
+                                      //   "Ingredients",
+                                      //   style: TextStyle(
+                                      //       fontSize: 16,
+                                      //       fontWeight: FontWeight.w600,
+                                      //       color: Colors.white60),
+                                      // ),
+
+                                      Image(
+                                        image: AssetImage(
+                                            "assets/ingredients.png"),
+                                        width: 120,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+
+                                // Image(
+                                //   image: AssetImage("assets/ingredients.png"),
+                                //   width: 120,
+                                // ),
 
                                 // ButtonOrderNow(),
                                 // ButtonAddOrderForSum(),
@@ -550,3 +632,10 @@ class ButtonAddOrderForSum extends StatelessWidget {
                     //         color: Colors.white,
                     //         fontSize: 24,
                     //       ),
+
+
+
+
+// clipBehavior: Clip.none,
+//                 context: context,
+//                 builder: (context) => Container());
