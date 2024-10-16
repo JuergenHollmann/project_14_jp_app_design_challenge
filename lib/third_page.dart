@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:project_14_jp_app_design_challenge/main.dart';
+import 'package:project_14_jp_app_design_challenge/second_page.dart';
 
 void main() {
   runApp(const ThirdPage());
@@ -144,19 +145,21 @@ class ShowModalBottomSheetOnThirdPage extends StatelessWidget {
                             // Color.fromARGB(255, 73, 58, 58)
 
                             Color.fromARGB(255, 40, 36, 28),
-                            // Color.fromARGB(255, 49, 52, 46)
-                            Color.fromARGB(255, 52, 66, 64) // Originalfarbe
+                            Color.fromARGB(255, 49, 52, 46)
+                            //Color.fromARGB(255, 52, 66, 64) // Originalfarbe
                           ],
                         ),
                       ),
 // ----------------------------------------------------------------------
-// den "button_add_order_for_sum" einfügen:
+// "button_add_order_for_sum" einfügen:
 // ----------------------------------------------------------------------
                       child: Center(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const SizedBox(height: 650),
+                            const SizedBox(
+                              height: 680, // Position von Oben
+                            ),
                             GestureDetector(
                               onTap: () {
                                 log("Wechsle zur Seite 1 = MainApp");
@@ -202,6 +205,52 @@ class ShowModalBottomSheetOnThirdPage extends StatelessWidget {
                       ),
                     ),
 // ----------------------------------------------------------------------
+// "IconButton" kann man NICHT einfügen, weil sonst cupcake nicht funzt!
+// Dann "Icon Cancel" einfügen und KLICKBAR machen (mit GestureDetector):
+// ----------------------------------------------------------------------
+                    Positioned(
+                      top: 24,
+                      right: 4,
+
+                      child: GestureDetector(
+                        onTap: () {
+                          log("Wechsle zur Seite 2 = SecondPage");
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const SecondPage(),
+                            ),
+                          );
+                        },
+                        child: const Icon(
+                          Icons.cancel_outlined,
+                          size: 44,
+                          color: Colors.white38,
+                        ),
+                      ),
+
+                      // child: Icon(
+                      //   Icons.cancel_outlined,
+                      //   size: 44,
+                      //   color: Colors.white38,
+                      // ),
+
+                      // child: IconButton(
+                      //   iconSize: 44,
+                      //   icon: const Icon(
+                      //     Icons.cancel_outlined,
+                      //     color: Colors.white38,
+                      //   ),
+                      //   onPressed: () => Navigator.pop(context),
+
+                      //   // {
+                      //   //   setState(
+                      //   //     () {
+                      //   //       count++;
+                      //   //     },
+                      // ),
+                    ),
+// ----------------------------------------------------------------------
 // ClipRRect "Mogli's Cup" einfügen:
 // ----------------------------------------------------------------------
                     Positioned(
@@ -227,8 +276,6 @@ class ShowModalBottomSheetOnThirdPage extends StatelessWidget {
                             ),
                             child: const Column(
                               children: [
-                                //SizedBox(height: 8),
-
                                 Padding(
                                   padding: EdgeInsets.fromLTRB(16, 24, 32, 0),
                                   child: Row(
@@ -236,7 +283,7 @@ class ShowModalBottomSheetOnThirdPage extends StatelessWidget {
                                     crossAxisAlignment: CrossAxisAlignment.end,
                                     children: [
                                       Icon(
-                                        Icons.heart_broken_rounded,
+                                        Icons.favorite_border_outlined,
                                         color: Colors.white60,
                                       ),
                                       Text(
@@ -308,11 +355,6 @@ class ShowModalBottomSheetOnThirdPage extends StatelessWidget {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      // Icon(
-                                      //   Icons.heart_broken_rounded,
-                                      //   color: Colors.white60,
-                                      // ),
-
                                       Text(
                                         "Ingredients                           Reviews",
                                         style: TextStyle(
@@ -320,20 +362,6 @@ class ShowModalBottomSheetOnThirdPage extends StatelessWidget {
                                             fontWeight: FontWeight.w600,
                                             color: Colors.white60),
                                       ),
-
-                                      // Text(
-                                      //   "Reviews",
-                                      //   style: TextStyle(
-                                      //       fontSize: 16,
-                                      //       fontWeight: FontWeight.w600,
-                                      //       color: Colors.white60),
-                                      // ),
-
-                                      // Image(
-                                      //   image: AssetImage(
-                                      //       "assets/ingredients.png"),
-                                      //   width: 120,
-                                      // ),
                                     ],
                                   ),
                                 ),
@@ -345,17 +373,19 @@ class ShowModalBottomSheetOnThirdPage extends StatelessWidget {
                                 //     crossAxisAlignment:
                                 //         CrossAxisAlignment.start,
                                 //     children: [
-                                //       Image(
-                                //         image: AssetImage(
-                                //           "assets/ingredients.png",
-                                //         ),
-                                //         // color: Color.fromARGB(71, 49, 48, 255),
-                                //         width: 120,
-                                //       ),
+                                // Image(
+                                //   image: AssetImage(
+                                //     "assets/ingredients.png",
+                                //   ),
+                                //   // color: Color.fromARGB(71, 49, 48, 255),
+                                //   width: 120,
+                                // ),
                                 //     ],
                                 //   ),
                                 // ),
-
+// ----------------------------------------------------------------------
+// "Reviews Sterne" einfügen:
+// ----------------------------------------------------------------------
                                 Padding(
                                   padding: EdgeInsets.fromLTRB(235, 8, 24, 0),
                                   child: Row(
@@ -405,7 +435,9 @@ class ShowModalBottomSheetOnThirdPage extends StatelessWidget {
                                     ],
                                   ),
                                 ),
-
+// ----------------------------------------------------------------------
+// "xxx" einfügen:
+// ----------------------------------------------------------------------
                                 // SizedBox(
                                 //   width: 200,
                                 //   height: 100,
@@ -432,6 +464,102 @@ class ShowModalBottomSheetOnThirdPage extends StatelessWidget {
                         ),
                       ),
                     ),
+// ----------------------------------------------------------------------
+// "Image Ingredients" einfügen:
+// ----------------------------------------------------------------------
+                    const Positioned(
+                      top: 575,
+                      left: 38,
+                      child: Image(
+                        image: AssetImage(
+                          "assets/ingredients.png",
+                        ),
+                        // color: Color.fromARGB(71, 49, 48, 255),
+                        width: 120,
+                      ),
+                    ),
+// ----------------------------------------------------------------------
+// "IconButton" kann man NICHT einfügen, weil sonst cupcake nicht funzt!
+// ----------------------------------------------------------------------
+                    // Positioned(
+                    //   top: 24,
+                    //   left: 375,
+                    //   child: IconButton(
+                    //     iconSize: 44,
+                    //     icon: const Icon(
+                    //       Icons.cancel_outlined,
+                    //       color: Colors.white38,
+                    //     ),
+                    //     onPressed: () => Navigator.pop(context),
+
+                    //     // {
+                    //     //   setState(
+                    //     //     () {
+                    //     //       count++;
+                    //     //     },
+                    //   ),
+                    // ),
+// ----------------------------------------------------------------------
+// "Icon Minus" einfügen:
+// ----------------------------------------------------------------------
+                    const Positioned(
+                      top: 660,
+                      right: 120,
+                      child: Icon(
+                        Icons.do_disturb_on_outlined,
+                        size: 44,
+                        color: Colors.white38,
+                      ),
+                    ),
+// ----------------------------------------------------------------------
+// "Zähler" einfügen:
+// ----------------------------------------------------------------------
+                    const Positioned(
+                      top: 663,
+                      right: 90,
+                      child: Text(
+                        "1",
+                        style: TextStyle(
+                            fontSize: 27,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.white70),
+                      ),
+                    ),
+// ----------------------------------------------------------------------
+// "Icon Plus" einfügen:
+// ----------------------------------------------------------------------
+                    const Positioned(
+                      top: 660,
+                      right: 24,
+                      child: Icon(
+                        Icons.add_circle_outline,
+                        size: 44,
+                        color: Colors.white38,
+                      ),
+                    ),
+// ----------------------------------------------------------------------
+// "3 Buttons - Small/Medium/Large - einfügen:
+// ----------------------------------------------------------------------
+                    Positioned(
+                      top: 660,
+                      left: 24,
+
+                      child: TextButton(
+                        child: const Text('Small'),
+                        onPressed: () => Navigator.pop(context),
+                      ),
+
+//child: ElevatedButton(onPressed: null {  },child: Text("Small"),),
+                      // child: Icon(
+                      //   Icons.add_circle_outline,
+                      //   size: 44,
+                      //   color: Colors.white38,
+                      // ),
+                    ),
+
+// ----------------------------------------------------------------------
+// Ende vom Stack:
+// ----------------------------------------------------------------------
                   ],
                 ),
               );
@@ -442,7 +570,7 @@ class ShowModalBottomSheetOnThirdPage extends StatelessWidget {
     );
   }
 }
-
+// ----------------------------------------------------------------------
 //   @override
 //   Widget build(BuildContext context) {
 //     return ElevatedButton(
@@ -493,11 +621,6 @@ class ButtonAddOrderForSum extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
 
 // // Muffin einfügen:
 //               const Positioned(
@@ -605,8 +728,6 @@ class ButtonAddOrderForSum extends StatelessWidget {
 
 // Button "Add to Order for ₳ 8.99" einfügen:
 
-
-
 // -------------- Original-Vorlage ------------------
 // class BottomSheetExample extends StatelessWidget {
 //   const BottomSheetExample({super.key});
@@ -645,58 +766,53 @@ class ButtonAddOrderForSum extends StatelessWidget {
 //   }
 // }
 
+// child: const Center(
+//   child: Positioned(
+//     top: -100,
+//     child: Column(
+//       // mainAxisAlignment: MainAxisAlignment.center,
+//       // mainAxisSize: MainAxisSize.min,
 
-                    // child: const Center(
-                    //   child: Positioned(
-                    //     top: -100,
-                    //     child: Column(
-                    //       // mainAxisAlignment: MainAxisAlignment.center,
-                    //       // mainAxisSize: MainAxisSize.min,
+//       // Muffin einfügen:
 
-                    //       // Muffin einfügen:
+//       // children: [
+//       //   Stack(
+//       //     child: Positioned(
+//       //       top: 252,
+//       //       left: 16,
 
-                    //       // children: [
-                    //       //   Stack(
-                    //       //     child: Positioned(
-                    //       //       top: 252,
-                    //       //       left: 16,
+//       children: [
+//         Image(
+//           image: AssetImage("assets/cat cupcakes_3D.png"),
+//           height: 450,
+//           fit: BoxFit.cover,
+//         ),
+//         SizedBox(height: 300),
+//         ButtonAddOrderForSum(),
+//       ],
+//     ),
+//   ),
+// ),
 
-                    //       children: [
-                    //         Image(
-                    //           image: AssetImage("assets/cat cupcakes_3D.png"),
-                    //           height: 450,
-                    //           fit: BoxFit.cover,
-                    //         ),
-                    //         SizedBox(height: 300),
-                    //         ButtonAddOrderForSum(),
-                    //       ],
-                    //     ),
-                    //   ),
-                    // ),
-
-
-                    // child: Container(
-                    //   height: 200,
-                    //   width: 350,
-                    //   decoration: BoxDecoration(
-                    //     color: Colors.white.withOpacity(0.04),
-                    //     borderRadius: BorderRadius.circular(16),
-                    //     border: Border.all(color: Colors.white, width: 0.2),
-                    //     //boxShadow: BoxShadow(spreadRadius: 1,),
-                    //   ),
-                    //   child: const Padding(
-                    //     padding: EdgeInsets.only(top: 30),
-                    //     child: Text(
-                    //       "Feeling Snackish Today?",
-                    //       textAlign: TextAlign.center,
-                    //       style: TextStyle(
-                    //         fontWeight: FontWeight.bold,
-                    //         color: Colors.white,
-                    //         fontSize: 24,
-                    //       ),
-
-
-
+// child: Container(
+//   height: 200,
+//   width: 350,
+//   decoration: BoxDecoration(
+//     color: Colors.white.withOpacity(0.04),
+//     borderRadius: BorderRadius.circular(16),
+//     border: Border.all(color: Colors.white, width: 0.2),
+//     //boxShadow: BoxShadow(spreadRadius: 1,),
+//   ),
+//   child: const Padding(
+//     padding: EdgeInsets.only(top: 30),
+//     child: Text(
+//       "Feeling Snackish Today?",
+//       textAlign: TextAlign.center,
+//       style: TextStyle(
+//         fontWeight: FontWeight.bold,
+//         color: Colors.white,
+//         fontSize: 24,
+//       ),
 
 // clipBehavior: Clip.none,
 //                 context: context,
