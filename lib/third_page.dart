@@ -140,8 +140,12 @@ class ShowModalBottomSheetOnThirdPage extends StatelessWidget {
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter,
                           colors: <Color>[
-                            Color.fromARGB(255, 63, 24, 24),
-                            Color.fromARGB(255, 73, 58, 58)
+                            // Color.fromARGB(255, 63, 24, 24),
+                            // Color.fromARGB(255, 73, 58, 58)
+
+                            Color.fromARGB(255, 40, 36, 28),
+                            // Color.fromARGB(255, 49, 52, 46)
+                            Color.fromARGB(255, 52, 66, 64) // Originalfarbe
                           ],
                         ),
                       ),
@@ -152,7 +156,7 @@ class ShowModalBottomSheetOnThirdPage extends StatelessWidget {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const SizedBox(height: 700),
+                            const SizedBox(height: 650),
                             GestureDetector(
                               onTap: () {
                                 log("Wechsle zur Seite 1 = MainApp");
@@ -204,7 +208,7 @@ class ShowModalBottomSheetOnThirdPage extends StatelessWidget {
                       top: 212,
                       right: 16,
                       left: 16,
-                      bottom: 160,
+                      bottom: 190,
                       child: ClipRRect(
                         borderRadius:
                             const BorderRadius.all(Radius.circular(32)),
@@ -249,7 +253,7 @@ class ShowModalBottomSheetOnThirdPage extends StatelessWidget {
                                 Text(
                                   "Mogli's Cup",
                                   style: TextStyle(
-                                      fontSize: 32,
+                                      fontSize: 28,
                                       fontWeight: FontWeight.w900,
                                       color: Colors.white),
                                 ),
@@ -296,7 +300,6 @@ class ShowModalBottomSheetOnThirdPage extends StatelessWidget {
                                     color: Colors.white60,
                                   ),
                                 ),
-                                // SizedBox(height: 16),
 
                                 Padding(
                                   padding: EdgeInsets.fromLTRB(24, 32, 24, 0),
@@ -311,12 +314,20 @@ class ShowModalBottomSheetOnThirdPage extends StatelessWidget {
                                       // ),
 
                                       Text(
-                                        "Ingredients",
+                                        "Ingredients                           Reviews",
                                         style: TextStyle(
                                             fontSize: 16,
                                             fontWeight: FontWeight.w600,
                                             color: Colors.white60),
                                       ),
+
+                                      // Text(
+                                      //   "Reviews",
+                                      //   style: TextStyle(
+                                      //       fontSize: 16,
+                                      //       fontWeight: FontWeight.w600,
+                                      //       color: Colors.white60),
+                                      // ),
 
                                       // Image(
                                       //   image: AssetImage(
@@ -326,40 +337,91 @@ class ShowModalBottomSheetOnThirdPage extends StatelessWidget {
                                     ],
                                   ),
                                 ),
-                                SizedBox(height: 0),
+
+                                // Padding(
+                                //   padding: EdgeInsets.fromLTRB(24, 8, 24, 0),
+                                //   child: Row(
+                                //     mainAxisAlignment: MainAxisAlignment.start,
+                                //     crossAxisAlignment:
+                                //         CrossAxisAlignment.start,
+                                //     children: [
+                                //       Image(
+                                //         image: AssetImage(
+                                //           "assets/ingredients.png",
+                                //         ),
+                                //         // color: Color.fromARGB(71, 49, 48, 255),
+                                //         width: 120,
+                                //       ),
+                                //     ],
+                                //   ),
+                                // ),
 
                                 Padding(
-                                  padding: EdgeInsets.fromLTRB(24, 8, 24, 0),
+                                  padding: EdgeInsets.fromLTRB(235, 8, 24, 0),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      // Icon(
-                                      //   Icons.heart_broken_rounded,
-                                      //   color: Colors.white60,
-                                      // ),
-
                                       // Text(
-                                      //   "Ingredients",
+                                      //   "Reviews",
                                       //   style: TextStyle(
                                       //       fontSize: 16,
                                       //       fontWeight: FontWeight.w600,
                                       //       color: Colors.white60),
                                       // ),
-
-                                      Image(
-                                        image: AssetImage(
-                                            "assets/ingredients.png"),
-                                        width: 120,
+                                      Icon(
+                                        Icons.star,
+                                        color: Colors.white,
+                                        size: 18,
+                                      ),
+                                      Icon(
+                                        Icons.star,
+                                        color: Colors.white,
+                                        size: 18,
+                                      ),
+                                      Icon(
+                                        Icons.star,
+                                        color: Colors.white,
+                                        size: 18,
+                                      ),
+                                      Icon(
+                                        Icons.star,
+                                        color: Colors.white,
+                                        size: 18,
+                                      ),
+                                      Icon(
+                                        Icons.star_border,
+                                        color: Colors.white,
+                                        size: 18,
+                                      ),
+                                      Text(
+                                        "    4.0",
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w600,
+                                            color: Colors.white60),
                                       ),
                                     ],
                                   ),
                                 ),
 
-                                // Image(
-                                //   image: AssetImage("assets/ingredients.png"),
-                                //   width: 120,
+                                // SizedBox(
+                                //   width: 200,
+                                //   height: 100,
+                                //       // Text(
+                                //       //   "Ingredients",
+                                //       //   style: TextStyle(
+                                //       //       fontSize: 16,
+                                //       //       fontWeight: FontWeight.w600,
+                                //       //       color: Colors.white60),
+                                //       // ),
+                                //   child: Image(
+                                //     image: AssetImage(
+                                //       "assets/ingredients.png",
+                                //     ),
+                                //     width: 120,
+                                //   ),
                                 // ),
 
                                 // ButtonOrderNow(),
