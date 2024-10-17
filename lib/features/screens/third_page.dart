@@ -2,7 +2,7 @@ import 'dart:developer';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:project_14_jp_app_design_challenge/main.dart';
-import 'package:project_14_jp_app_design_challenge/second_page.dart';
+import 'package:project_14_jp_app_design_challenge/features/screens/second_page.dart';
 
 void main() {
   runApp(const ThirdPage());
@@ -56,7 +56,6 @@ class ThirdPage extends StatelessWidget {
   }
 }
 
-// ----------------------------------------------------------------------
 class ShowModalBottomSheetOnThirdPage extends StatefulWidget {
   const ShowModalBottomSheetOnThirdPage({super.key});
   @override
@@ -418,7 +417,6 @@ class ClipRRectMoglisCupP3 extends StatelessWidget {
                     ],
                   ),
                 ),
-// ----------------------------------------------------------------------
                 ReviewStarsP3(),
               ],
             ),

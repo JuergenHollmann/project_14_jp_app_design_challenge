@@ -1,7 +1,7 @@
 import 'dart:developer';
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:project_14_jp_app_design_challenge/second_page.dart';
+import 'package:project_14_jp_app_design_challenge/features/screens/second_page.dart';
 
 void main() {
   runApp(const MainApp());
