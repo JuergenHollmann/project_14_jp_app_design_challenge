@@ -6,6 +6,4 @@ Natürlich sind auch gleich ein paar einfache Funktionen mit eingebaut worden.
 
 Die App wird gelegentlich um weitere Funktionen erweitert.
 #
-
-[alt text](<graphics/Seite 1.png>) [alt text](<graphics/Seite 2.png>)
-[alt text](<graphics/Seite 3.png>)
+![alt text](<graphics/Seite 1.png>)![alt text](<graphics/Seite 2.png>)![alt text](<graphics/Seite 3.png>)
